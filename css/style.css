@@ -1,0 +1,666 @@
+:root {
+  --primary: #6a68eb;
+  --secondary: #15a25f;
+  --third: #0779ec;
+  --bg: #fff;
+}
+
+@font-face {
+  font-family: "TT-Hoves-Regular";
+  src: url(../assets/fonts/TT\ Hoves\ Regular.otf);
+}
+
+@font-face {
+  font-family: "TT-Hoves-Bold";
+  src: url(../assets/fonts/TT\ Hoves\ Bold.otf);
+}
+
+* {
+  font-family: "TT-Hoves", sans-serif;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+}
+
+body {
+  font-family: "TT-Hoves", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 7%;
+  background-color: white;
+  border-bottom: 1px solid #000;
+  z-index: 9;
+}
+
+.navbar .navbar-logo img {
+  width: 14vw;
+  margin-left: 2rem;
+}
+
+.navbar .navbar-nav a {
+  color: #000;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  border-bottom: 0.2rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-nav a span {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.navbar .navbar-nav .block {
+  border-left: 7px solid #000;
+  position: relative;
+  top: 0.5rem;
+  height: 1.9rem;
+  border-radius: 15px;
+}
+
+.navbar .navbar-nav button {
+  background-color: #000;
+  color: var(--bg);
+  width: 15rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar .navbar-nav button:hover {
+  background-color: var(--primary);
+}
+
+.navbar .navbar-lang {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.navbar .navbar-lang a {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  padding-top: 0.7rem;
+  color: #000;
+}
+
+.navbar .navbar-lang .use {
+  color: var(--primary);
+  content: "";
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--primary);
+  transition: 0.3s;
+}
+
+.navbar .navbar-lang .not-use:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-lang .not-use::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-lang .not-use:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-lang .not-use:active {
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-extra {
+  position: absolute;
+  right: 5%;
+}
+
+.navbar .navbar-extra #hamburger-menu {
+  display: none;
+}
+
+/* Hero 1 Section */
+.hero1 {
+  position: relative;
+}
+
+.hero1 .container {
+  margin: 1.2rem 1.4rem;
+}
+
+@keyframes hero-intro {
+  from {
+    height: 200%;
+  }
+  to {
+    height: 0;
+  }
+}
+
+.hero1 .overlay {
+  background-color: var(--bg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: hero-intro 2s cubic-bezier(0.165, 0.84, 1, 1);
+}
+
+/* Hero 2 Section */
+.hero2 {
+  margin-top: 4rem;
+}
+
+.hero2 .container {
+  background-color: var(--primary);
+}
+
+.hero2 .container .brandtopeople {
+  width: 100%;
+  padding: 0 2.5rem;
+  height: 250px;
+}
+
+.hero2 .container .brandtopeople img {
+  width: 100%;
+}
+
+.hero2 .container .row {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.hero2 .container .row .hero2-container {
+  margin-left: 12rem;
+}
+
+.hero2 .container .row .hero2-container .hero2-img {
+  width: 35rem;
+}
+
+.hero2 .container .row .content {
+  color: #fff;
+  width: 100%;
+  padding-right: 21rem;
+}
+
+.hero2 .container .row .content h2 {
+  font-family: "TT-Hoves-Bold", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero2 .container .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.hero2 .container .row .content .get-started input {
+  width: 19rem;
+  height: 3.5rem;
+  padding: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.hero2 .container .row .content .get-started .btn {
+  background-color: #000;
+  font-family: "TT-Hoves-Bold", sans-serif;
+  color: #fff;
+  width: 12.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+.hero2 .container .row .content .get-started .btn:hover {
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: bolder;
+  border: 2px solid #000;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.hero2 .container .row .content .get-started .btn:active {
+  width: 11rem;
+  height: 3.2rem;
+  font-size: 1rem;
+  margin-left: 0.8rem;
+}
+
+.hero2 .container .row .content a {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.hero2 .container .row .content a:hover {
+  color: #000;
+}
+
+.hero2 .container .row .content a:active {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+/* Clients Logo Section */
+/* Animation */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.clients-container {
+  display: flex;
+  place-items: center;
+  padding-bottom: 1rem;
+}
+
+.clients-container .clients-logo {
+  overflow: hidden;
+  width: 100%;
+  border: 2px solid #fff;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.clients-container .clients-logo .clients-logo-slide {
+  display: inline-block;
+  animation: slide 15s infinite linear;
+}
+
+.clients-container .clients-logo .clients-logo-slide img {
+  height: 50px;
+  margin: 0 1rem;
+}
+
+.clients-container h3 {
+  flex: 1 1 23rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Case Studies Section */
+.case-studies {
+  margin: 1.2rem 5%;
+}
+
+/* Filter */
+.case-studies h2 {
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.case-studies .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.7rem;
+}
+
+.case-studies .filter-buttons button {
+  align-items: center;
+  margin: 0.3rem 0;
+  margin-right: 0.5rem;
+  padding: 1.5rem 1.2rem;
+  background-color: rgb(243 244 246);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.case-studies .filter-buttons button:hover {
+  background-color: #7575756e;
+}
+
+.case-studies .filter-buttons button.active {
+  background-color: var(--primary);
+}
+
+.case-studies .filter-buttons .filter-all {
+  border-bottom: 3.5px solid var(--third);
+  color: var(--third);
+}
+
+.case-studies .filter-buttons .filter-beauty {
+  border-bottom: 3.5px solid rgb(255, 1, 200);
+}
+
+.case-studies .filter-buttons .filter-food {
+  border-bottom: 3.5px solid rgb(255, 240, 27);
+}
+
+.case-studies .filter-buttons .filter-financial-education {
+  border-bottom: 3.5px solid rgb(0, 255, 0);
+}
+
+.case-studies .filter-buttons .filter-cooking {
+  border-bottom: 3.5px solid rgb(255, 0, 0);
+}
+
+.case-studies .filter-buttons .filter-entertainment {
+  border-bottom: 3.5px solid rgb(195, 0, 255);
+}
+
+.case-studies .filter-buttons .filter-healty {
+  border-bottom: 3.5px solid rgb(0, 183, 255);
+}
+
+/* Case Studies Card */
+.case-studies .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.case-studies .row .case-studies-card {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.case-studies .row .case-studies-card img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.case-studies .row .case-studies-card:hover img {
+  transform: scale(1.05);
+}
+
+.case-studies .row .case-studies-card .category {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+
+.case-studies .row .case-studies-card .category button {
+  margin: 1rem;
+  padding: 0.5rem 0.9rem;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.case-studies .row .case-studies-card .category .beauty {
+  background-color: rgb(255, 1, 200);
+  color: rgb(255, 255, 255);
+}
+.case-studies .row .case-studies-card .category .beauty:hover {
+  background-color: rgb(187, 0, 146);
+  color: rgb(192, 192, 192);
+}
+
+.case-studies .row .case-studies-card .category .healthy {
+  background-color: rgb(0, 183, 255);
+  color: rgb(255, 255, 255);
+}
+.case-studies .row .case-studies-card .category .healthy:hover {
+  background-color: rgb(0, 145, 202);
+  color: rgb(192, 192, 192);
+}
+
+.case-studies .row .case-studies-card .category .food {
+  background-color: rgb(255, 240, 27);
+  color: rgb(255, 255, 255);
+}
+.case-studies .row .case-studies-card .category .food:hover {
+  background-color: rgb(201, 189, 21);
+  color: rgb(192, 192, 192);
+}
+
+.case-studies .row .case-studies-card .category .entertainment {
+  background-color: rgb(195, 0, 255);
+  color: rgb(255, 255, 255);
+}
+.case-studies .row .case-studies-card .category .entertainment:hover {
+  background-color: rgb(154, 1, 201);
+  color: rgb(192, 192, 192);
+}
+
+/* Text Reveal Animation */
+.slide-up {
+  opacity: 0;
+  fill: blur(5px);
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  fill: blur(0);
+  transform: translateY(0);
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .navbar {
+    position: fixed;
+  }
+
+  .navbar .navbar-extra #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 5.3rem;
+    right: 0;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.3s;
+    z-index: 99;
+    text-align: center;
+  }
+
+  .navbar.active {
+    position: relative;
+  }
+
+  .navbar .navbar-nav.active {
+    opacity: 0;
+  }
+
+  .navbar .navbar-nav .line-navbar {
+    display: none;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    z-index: -99999999;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+  }
+
+  .navbar .navbar-nav a span {
+    font-weight: lighter;
+    margin-left: 0;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-logo img {
+    margin: 0;
+  }
+
+  .navbar .navbar-lang {
+    margin-right: 2rem;
+  }
+
+  .hero2 .container .brandtopeople {
+    height: 170px;
+  }
+
+  .hero2 .container .row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -5rem;
+    padding: 0 5% 0;
+  }
+
+  .hero2 .container .row .hero2-container {
+    margin: 0;
+  }
+
+  .hero2 .container .row .content {
+    color: #fff;
+    padding: 2rem 0 0 0;
+  }
+
+  .hero2 .container .row .content h2 {
+    font-size: 3.8rem;
+    padding: 0;
+  }
+
+  .hero2 .container .row .content p {
+    font-size: 1.5rem;
+  }
+
+  .hero2 .container .row .content .get-started input {
+    width: 100%;
+    height: 4.5rem;
+  }
+
+  .hero2 .container .row .content .get-started button {
+    width: 15rem;
+    height: 4.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  .hero2 .container .row .content .get-started button:active {
+    width: 12.5rem;
+    height: 3.5rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .navbar .navbar-logo img {
+    width: 18vw;
+    margin-left: 2rem;
+  }
+
+  .hero2 .container .brandtopeople {
+    height: 120px;
+  }
+
+  .hero2 .container .row .content p {
+    font-size: 1.5rem;
+  }
+
+  .hero2 .container .row .content input {
+    width: 100%;
+    height: 5.5rem;
+  }
+
+  .hero2 .container .row .content button {
+    margin-left: 0;
+    margin-top: 1rem;
+    height: 5.5rem;
+  }
+
+  .clients-container .clients-logo {
+    padding: 0;
+  }
+
+  .clients-container .clients-logo .clients-logo-slide img {
+    height: 35px;
+  }
+
+  .clients-container h3 {
+    flex: 1 1 15rem;
+    font-size: 1.5rem;
+  }
+
+  .case-studies h2 {
+    font-size: 2rem; /* Adjusted font size for smaller screens */
+  }
+}
