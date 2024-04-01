@@ -22,48 +22,61 @@ const observer = new IntersectionObserver((entries) => {
 const slideUp = document.querySelectorAll(".slide-up");
 slideUp.forEach((el) => observer.observe(el));
 
-// Filter Section
-filterSelection("all");
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filter");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
+// Horizontally Scroll
+(function () {
+  init();
 
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+  var g_containerInViewport;
+  function init() {
+    setStickyContainersSize();
+    bindEvents();
+  }
+
+  function bindEvents() {
+    window.addEventListener("wheel", wheelHandler);
+  }
+
+  function setStickyContainersSize() {
+    document
+      .querySelectorAll(".sticky-container")
+      .forEach(function (container) {
+        const stikyContainerHeight =
+          container.querySelector(".scroll-container").scrollWidth +
+          window.innerHeight;
+        container.setAttribute(
+          "style",
+          "height: " + stikyContainerHeight + "px"
+        );
+      });
+  }
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= 0 && rect.bottom > document.documentElement.clientHeight;
+  }
+
+  function wheelHandler(evt) {
+    const containerInViewPort = Array.from(
+      document.querySelectorAll(".sticky-container")
+    ).filter(function (container) {
+      return isElementInViewport(container);
+    })[0];
+
+    if (!containerInViewPort) {
+      return;
+    }
+
+    var isPlaceHolderBelowTop =
+      containerInViewPort.offsetTop < document.documentElement.scrollTop;
+    var isPlaceHolderBelowBottom =
+      containerInViewPort.offsetTop + containerInViewPort.offsetHeight >
+      document.documentElement.scrollTop;
+    let g_canScrollHorizontally =
+      isPlaceHolderBelowTop && isPlaceHolderBelowBottom;
+
+    if (g_canScrollHorizontally) {
+      containerInViewPort.querySelector(".scroll-container").scrollLeft +=
+        evt.deltaY;
     }
   }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementsByClassName("filter-buttons");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+})();
