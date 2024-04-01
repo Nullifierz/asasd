@@ -3,373 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kamaye</title>
-
-    <!-- Icon Kamaye -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/Favicon-Positive.png"
-    />
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <title>GSAP Horizontal Scroll with Mouse Wheel Example</title>
     <style>
-      .navbar .navbar-nav .none::after {
-        content: "";
-        display: block;
-        padding-bottom: 0;
-        border-bottom: 0;
-        transform: scaleX(0);
+      html {
+        overflow-y: scroll;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+      }
+      body {
+        overflow-y: visible;
+        position: relative;
+        height: unset;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+        margin: 0;
+      }
+
+      .container {
+        /* width: 100vw; */
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .container section {
+        width: 100%;
+      }
+
+      .container section img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .firstContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: yellow;
+      }
+
+      .lastContainer {
+        display: flex;
+        height: 100vh;
+        background: yellow;
       }
     </style>
-
-    <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <!-- Navbar Start -->
-    <nav class="navbar active">
-      <a href="index.html" class="navbar-logo">
-        <img src="assets/img/kamaye-logo.png" alt="Kamaye Logo" class="logo" />
-      </a>
-      <div class="navbar-nav active">
-        <a href="#">About</a>
-        <a href="#">Our Services</a>
-        <a href="#" style="cursor: default" class="line-navbar">
-          <div class="block"></div>
-        </a>
-        <a href="pages/case-studies.html"><span>Case Studies</span></a>
-        <a href="#" class="none">
-          <button class="contact">CONTACT US</button>
-        </a>
-      </div>
-      <div class="navbar-lang">
-        <a href="" class="use">EN</a>
-        <a href="" class="not-use">IDN</a>
-      </div>
-      <div class="navbar-extra">
-        <a href="#" id="hamburger-menu">
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <use href="assets/img/feather-sprite.svg#menu" />
-          </svg>
-        </a>
-      </div>
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Hero Section Start -->
-    <section class="hero1">
-      <div class="container">
-        <lottie-player
-          class="kamaye-video"
-          src="assets/video/hero.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-        ></lottie-player>
-        <div class="overlay"></div>
-      </div>
-    </section>
-    <!-- Hero Section End -->
-
-    <!-- Digital Agency Section Start -->
-        <section class="main">
-      <div class="container">
-        <h1>Digital Agency</h1>
-        <div class="brandtopeople">
-          <img
-            src="assets/img/home-page/brand-to-people.png"
-            alt="Brand To People"
-          />
-        </div>
-        <div class="about-box ">
-          <p class="slide-up">Kamaye is an integrated marketing agency bridging brands in receiving blessings from it's people. Through people's voice of support, building conversations, sharing stories and making actions together in the ever-changing digital real. Winning's people attention in a measurable impact.
-          </p>
-          <button class="slide-up">Whatsapp</button>
-          <button class="slide-up">Email Us</button>
-        </div>
-        <div class="our-clients-box">
-          <div class="woman-container">
-            <lottie-player
-              class="woman-img"
-              src="assets/video/WOMAN.json"
-              background="transparent"
-              loop
-              autoplay
-            ></lottie-player>
-          </div>
-          <div class="content">
-            <h5 class="slide-up">Our Clients</h5>
-            <h2 class="slide-up">
-              Trusted by <span>50+ Company</span>
-            </h2>
-          </div>
-        </div>
-        <div class="clients-container" style="background-color: #6a68eb;">
-          <h3>Join Us !</h3>
-          <div class="clients-logo">
-            <!-- Clients Section Start -->
-            <div class="clients-logo-slide">
-              <img src="assets/img/clients/AIRWICK.png" alt="" />
-              <img src="assets/img/clients/AKULAKU.png" alt="" />
-              <img src="assets/img/clients/BAKMI MEWAH.png" alt="" />
-              <img src="assets/img/clients/BNI46.png" alt="" />
-              <img src="assets/img/clients/BUKALAPAK.png" alt="" />
-              <img src="assets/img/clients/CHICKRO.png" alt="" />
-              <img src="assets/img/clients/CHOCOLATOS.png" alt="" />
-              <img src="assets/img/clients/CODASHOP.png" alt="" />
-              <img src="assets/img/clients/DELICO.png" alt="" />
-              <img src="assets/img/clients/DETTOL.png" alt="" />
-              <img src="assets/img/clients/DEXAMEDICA.png" alt="" />
-              <img src="assets/img/clients/FIZZO.png" alt="" />
-              <img src="assets/img/clients/GAMEQOO.png" alt="" />
-              <img src="assets/img/clients/garudafood.png" alt="" />
-              <img src="assets/img/clients/GERY SALUT.png" alt="" />
-              <img src="assets/img/clients/HALODODC.png" alt="" />
-              <img src="assets/img/clients/HERBA ASIMOR.png" alt="" />
-              <img src="assets/img/clients/INTI PRIMA RASA.png" alt="" />
-              <img src="assets/img/clients/MAYORA.png" alt="" />
-              <img src="assets/img/clients/NANOVEST.png" alt="" />
-              <img src="assets/img/clients/NUTRIFFOD.png" alt="" />
-              <img src="assets/img/clients/NUTRISARI.png" alt="" />
-              <img src="assets/img/clients/OXYVIT.png" alt="" />
-              <img src="assets/img/clients/PERFECTVIT.png" alt="" />
-              <img src="assets/img/clients/RECKITT.png" alt="" />
-              <img src="assets/img/clients/SAVIOR.png" alt="" />
-              <img src="assets/img/clients/SHOPEE.png" alt="" />
-              <img src="assets/img/clients/SHOPEEFOOD.png" alt="" />
-              <img src="assets/img/clients/SHOPEEPAY.png" alt="" />
-              <img src="assets/img/clients/STIMUNO.png" alt="" />
-              <img src="assets/img/clients/SWISSE.png" alt="" />
-              <img src="assets/img/clients/TELKOMSEL REDI.png" alt="" />
-              <img src="assets/img/clients/TUMBUH LAB.png" alt="" />
-              <img src="assets/img/clients/VANISH.png" alt="" />
-              <img src="assets/img/clients/VISVAL.png" alt="" />
-              <img src="assets/img/clients/WEBTOON.png" alt="" />
-            </div>
-            <div class="clients-logo-slide">
-              <img src="assets/img/clients/AIRWICK.png" alt="" />
-              <img src="assets/img/clients/AKULAKU.png" alt="" />
-              <img src="assets/img/clients/BAKMI MEWAH.png" alt="" />
-              <img src="assets/img/clients/BNI46.png" alt="" />
-              <img src="assets/img/clients/BUKALAPAK.png" alt="" />
-              <img src="assets/img/clients/CHICKRO.png" alt="" />
-              <img src="assets/img/clients/CHOCOLATOS.png" alt="" />
-              <img src="assets/img/clients/CODASHOP.png" alt="" />
-              <img src="assets/img/clients/DELICO.png" alt="" />
-              <img src="assets/img/clients/DETTOL.png" alt="" />
-              <img src="assets/img/clients/DEXAMEDICA.png" alt="" />
-              <img src="assets/img/clients/FIZZO.png" alt="" />
-              <img src="assets/img/clients/GAMEQOO.png" alt="" />
-              <img src="assets/img/clients/garudafood.png" alt="" />
-              <img src="assets/img/clients/GERY SALUT.png" alt="" />
-              <img src="assets/img/clients/HALODODC.png" alt="" />
-              <img src="assets/img/clients/HERBA ASIMOR.png" alt="" />
-              <img src="assets/img/clients/INTI PRIMA RASA.png" alt="" />
-              <img src="assets/img/clients/MAYORA.png" alt="" />
-              <img src="assets/img/clients/NANOVEST.png" alt="" />
-              <img src="assets/img/clients/NUTRIFFOD.png" alt="" />
-              <img src="assets/img/clients/NUTRISARI.png" alt="" />
-              <img src="assets/img/clients/OXYVIT.png" alt="" />
-              <img src="assets/img/clients/PERFECTVIT.png" alt="" />
-              <img src="assets/img/clients/RECKITT.png" alt="" />
-              <img src="assets/img/clients/SAVIOR.png" alt="" />
-              <img src="assets/img/clients/SHOPEE.png" alt="" />
-              <img src="assets/img/clients/SHOPEEFOOD.png" alt="" />
-              <img src="assets/img/clients/SHOPEEPAY.png" alt="" />
-              <img src="assets/img/clients/STIMUNO.png" alt="" />
-              <img src="assets/img/clients/SWISSE.png" alt="" />
-              <img src="assets/img/clients/TELKOMSEL REDI.png" alt="" />
-              <img src="assets/img/clients/TUMBUH LAB.png" alt="" />
-              <img src="assets/img/clients/VANISH.png" alt="" />
-              <img src="assets/img/clients/VISVAL.png" alt="" />
-              <img src="assets/img/clients/WEBTOON.png" alt="" />
-            </div>
-            <!-- Clients Section End -->
-          </div>
-        </div>o
-      </div>
-    </section>
-    <!-- Digital Agency Section End -->
-
-    <!-- Our Passionate Section Start -->
-    <section class="op">
-      <div class="op-container">
-        <div class="op-content">
-          <div class="title-flex">
-            <h5>Our</h5>
-            <h2>Passionate</h3>
-          </div>
-          <div class="text">
-            <p>
-              Kamaye's is an Influencer Marketing Agency and acts as bridge
-              that connects brand in receiving blessing from its people.
-            </p>
-          </div>
-        </div>
-        <div class="op-content-flex">
-          <div class="op-content-box-quotes">
-            <img src="/assets/img/home-page/quotes.svg" alt="">
-            <h3>Update Kamaye's insights on digital progress, innovations, and changes directly affecting marketing and business clients.</h3>
-          </div>
-          <div class="op-content-box-progression">
-            <lottie-player
-              class="progression"
-              src="assets/video/PROGRESSION.json"
-              background="transparent"
-              loop
-              autoplay
-            ></lottie-player>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Our Passionate Section End -->
-
-    <!-- Horizontall Scroll Section Start -->
-    <div class="sticky-container">
-      <main class="scroll-container">
-        <section>
-          <img src="assets/img/home-page/scroll-1.jpg" alt="">
-        </section>
-        <section>
-          <img src="assets/img/home-page/scroll-2.jpg" alt="">
-        </section>
-        <section>
-          <img src="assets/img/home-page/scroll-3.jpg" alt="">
-        </section>
-        <section>
-          <img src="assets/img/home-page/scroll-4.jpg" alt="">
-        </section>
-      </main>
+    <div class="firstContainer">
+      <h1>Testing horizontal scrolling w/ three sections</h1>
+      <h2>First Container</h2>
     </div>
-    <!-- Horizontall Scroll Section End -->
+    <div class="container">
+      <section class="panel">
+        <img src="assets/img/home-page/scroll-1.jpg" alt="" />
+      </section>
+      <section class="panel">
+        <img src="assets/img/home-page/scroll-2.jpg" alt="" />
+      </section>
+      <section class="panel">
+        <img src="assets/img/home-page/scroll-3.jpg" alt="" />
+      </section>
+      <section class="panel">
+        <img src="assets/img/home-page/scroll-4.jpg" alt="" />
+      </section>
+    </div>
+    <div class="lastContainer">Last Container</div>
 
-    <!-- Subscribe Section Start -->
-    <section class="subscribe">
-      <div class="subscribe-container">
-        <h4>Subscribe Newsletters</h4>
-        <input type="email" placeholder="Enter your email">
-        <div class="button">
-          <button>SUBSCRIBE NOW</button>
-        </div>
-      </div>    
-      <!-- Social Media Section Start -->
-      <div class="sm-container">
-        <a href="#">
-          <svg
-          width="24"
-          height="24"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <use href="assets/img/feather-sprite.svg#facebook" />
-          </svg>
-        </a>
-        <a href="#">
-          <svg
-          width="24"
-          height="24"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <use href="assets/img/feather-sprite.svg#twitter" />
-          </svg>
-        </a>
-        <a href="#">
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <use href="assets/img/feather-sprite.svg#instagram" />
-          </svg>      
-        </a>
-        <a href="#">
-          <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <use href="assets/img/feather-sprite.svg#youtube" />
-          </svg>
-        </a>
-      </div>
-      <!-- Social Media Section End -->
-    </section>
-    <!-- Subscribe Section End -->   
-    
-    <!-- Footer Section Start -->
-    <footer>
-      <a href="index.html" class="navbar-logo">
-        <img src="assets/img/kamaye-logo.png" alt="Kamaye Logo" class="logo" />
-      </a>
-      <ul>
-        <li class="header">COMPANY</li>
-        <li>How it works</li>
-        <li>Pricing</li>
-        <li>Docs</li>
-      </ul>
-      <ul>
-        <li class="header">RESOURCES</li>
-        <li>Blog post name list goes here</li>
-        <li>Blog post name list goes here</li>
-        <li>Blog post name list goes here</li>
-        <li>See all resources ></li>
-      </ul>
-      <ul>
-        <li class="header">ABOUT</li>
-        <li>Terms & Conditions</li>
-        <li>Privacy Policy</li>
-        <li>test</li>
-      </ul>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!--Copyright Section Start  -->
-    <section class="cr">
-      <div class="cr-container">
-        <p>
-          Copyright &copy 2024 Kamaye
-        </p>
-      </div>
-    </section>
-    <!--Copyright Section End  -->
-
-    <!-- Javascript-->
-    <script
-      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-      type="module"
-    ></script>
-    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script>
-      feather.replace();
+      gsap.registerPlugin(ScrollTrigger);
+
+      let sections = gsap.utils.toArray(".panel");
+
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".container",
+          pin: true,
+          scrub: 1,
+          snap: 1 / (sections.length - 1),
+          end: () => "+=" + document.querySelector(".container").offsetWidth,
+        },
+      });
     </script>
   </body>
 </html>
-
-
